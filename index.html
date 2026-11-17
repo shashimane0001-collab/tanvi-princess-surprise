@@ -9,8 +9,7 @@
 :root{--pink:#f7a9c4;--rose:#d85f91;--deep:#8f3e69;--cream:#fff9fb;--gold:#d9ad62}
 *{box-sizing:border-box}html{scroll-behavior:smooth}
 body{margin:0;color:#65344e;font-family:Georgia,'Times New Roman',serif;background:radial-gradient(circle at 15% 10%,#fff 0 2px,transparent 3px),linear-gradient(145deg,#fff7fa,#ffe5ef 48%,#fbd1e2);background-size:38px 38px,auto;overflow-x:hidden}
-button{font:inherit;cursor:pointer}
-.wrap{width:min(920px,92%);margin:auto}
+button{font:inherit;cursor:pointer}.wrap{width:min(920px,92%);margin:auto}
 .hero{min-height:100svh;display:grid;place-items:center;text-align:center;padding:48px 16px;position:relative;overflow:hidden}
 .hero:before,.hero:after{content:"✦";position:absolute;color:#d9ad62;font-size:2rem;animation:twinkle 2.4s infinite alternate}
 .hero:before{top:13%;left:13%}.hero:after{right:12%;bottom:18%;animation-delay:1s}
@@ -19,52 +18,35 @@ button{font:inherit;cursor:pointer}
 h1{font-size:clamp(2.8rem,10vw,5.8rem);line-height:.98;margin:16px 0;color:#a94e78;font-weight:500;text-shadow:0 3px #fff}
 .script{font-style:italic;color:#c46b91;font-size:clamp(1.1rem,4vw,1.55rem)}
 .primary,.soft{border:0;border-radius:999px;padding:15px 25px;margin:12px 5px;background:linear-gradient(120deg,#d65f91,#ee9fbd);color:white;box-shadow:0 9px 22px #c05b8940;transition:.2s}
-.primary:hover,.soft:hover{transform:translateY(-2px)}
-.soft{background:#fff9fc;color:#a94e78;border:1px solid #f1c2d4}
-section{padding:65px 0}
-.panel{background:#ffffffb8;border:1px solid #fff;box-shadow:0 18px 55px #b65b8420;border-radius:28px;padding:clamp(22px,5vw,42px);backdrop-filter:blur(8px)}
+.primary:hover,.soft:hover{transform:translateY(-2px)}.soft{background:#fff9fc;color:#a94e78;border:1px solid #f1c2d4}
+section{padding:65px 0}.panel{background:#ffffffb8;border:1px solid #fff;box-shadow:0 18px 55px #b65b8420;border-radius:28px;padding:clamp(22px,5vw,42px);backdrop-filter:blur(8px)}
 h2{text-align:center;font-weight:500;font-size:clamp(2rem,7vw,3rem);color:#a94e78;margin:0 0 12px}
 .sub{text-align:center;color:#a56a85;margin:0 auto 28px;max-width:580px;line-height:1.7}
-.letter{font-size:1.12rem;line-height:1.9;white-space:pre-line}
-.sign{text-align:right;font-style:italic;color:#b14f7c;font-size:1.3rem;margin-top:25px}
-.gallery{display:grid;grid-template-columns:repeat(3,1fr);gap:13px}
-.photo{min-height:190px;border:2px dashed #e8a8c1;border-radius:19px;background:linear-gradient(145deg,#fff7fa,#f9dce8);display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;overflow:hidden;position:relative;padding:12px}
-.photo img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
-.photo .placeholder{font-size:2rem}.photo label{font: .85rem Arial,sans-serif;color:#a75b7d;z-index:1;margin-top:8px;cursor:pointer}
-.photo input{position:absolute;inset:0;opacity:0;cursor:pointer;z-index:2}
-.photo:has(img) label,.photo:has(img) .placeholder{display:none}
-.final{display:none;text-align:center}.final.show{display:block;animation:appear .8s ease both}
-.bigheart{font-size:4rem;animation:beat 1s infinite}
-footer{text-align:center;padding:25px;color:#a76b87;font: .82rem Arial,sans-serif}
-.heart{position:fixed;bottom:-30px;pointer-events:none;z-index:10;animation:rise linear forwards;opacity:.85}
-@keyframes rise{to{transform:translateY(-110vh) rotate(25deg);opacity:0}}
-@keyframes float{50%{transform:translateY(-10px) rotate(4deg)}}
-@keyframes twinkle{to{opacity:.25;transform:scale(.65) rotate(40deg)}}
-@keyframes beat{50%{transform:scale(1.18)}}
-@keyframes appear{from{opacity:0;transform:translateY(15px)}to{opacity:1;transform:none}}
-@media(max-width:650px){.gallery{grid-template-columns:1fr 1fr}.photo{min-height:145px}.letter{font-size:1.02rem}}
-@media(max-width:390px){.gallery{grid-template-columns:1fr}}
+.letter{font-size:1.12rem;line-height:1.9;white-space:pre-line}.sign{text-align:right;font-style:italic;color:#b14f7c;font-size:1.3rem;margin-top:25px}
+.gallery{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:14px}
+.photo{margin:0;position:relative;overflow:hidden;border:3px solid #fff;border-radius:20px;background:#f9dce8;box-shadow:0 10px 28px #a94e7822;aspect-ratio:3/4}
+.photo img{display:block;width:100%;height:100%;object-fit:cover;transition:transform .45s ease}.photo:hover img{transform:scale(1.035)}
+.photo figcaption{position:absolute;left:0;right:0;bottom:0;padding:28px 10px 12px;color:white;text-align:center;font-weight:bold;font-size:1rem;background:linear-gradient(transparent,#632b4dcc)}
+.final{display:none;text-align:center}.final.show{display:block;animation:appear .8s ease both}.bigheart{font-size:4rem;animation:beat 1s infinite}
+footer{text-align:center;padding:25px;color:#a76b87;font:.82rem Arial,sans-serif}.heart{position:fixed;bottom:-30px;pointer-events:none;z-index:10;animation:rise linear forwards;opacity:.85}
+@keyframes rise{to{transform:translateY(-110vh) rotate(25deg);opacity:0}}@keyframes float{50%{transform:translateY(-10px) rotate(4deg)}}@keyframes twinkle{to{opacity:.25;transform:scale(.65) rotate(40deg)}}@keyframes beat{50%{transform:scale(1.18)}}@keyframes appear{from{opacity:0;transform:translateY(15px)}to{opacity:1;transform:none}}
+@media(max-width:650px){.gallery{grid-template-columns:1fr 1fr;gap:10px}.letter{font-size:1.02rem}.photo figcaption{font-size:.9rem}}
+@media(max-width:390px){.gallery{grid-template-columns:1fr}.photo{aspect-ratio:4/3}}
 </style>
 </head>
 <body>
-<header class="hero">
- <div>
-  <div class="crown">👑</div>
-  <div class="eyebrow">A little fairytale, made just for you</div>
-  <h1>Happy Princess Day,<br>Tanvi</h1>
-  <p class="script">My dear love, today the fairytale is all yours. 🫶🏻💓💋</p>
-  <button class="primary" onclick="document.querySelector('#letter').scrollIntoView({behavior:'smooth'})">Open your surprise ✨</button>
-  <div><button class="soft" id="musicBtn" onclick="toggleMusic()">♫ Play sweet music</button></div>
-  <p style="font-size:.82rem;color:#ae7891">A special little world from Shashank</p>
- </div>
-</header>
-
+<header class="hero"><div>
+ <div class="crown">👑</div><div class="eyebrow">A little fairytale, made just for you</div>
+ <h1>Happy Princess Day,<br>Tanvi</h1>
+ <p class="script">My dear love, today the fairytale is all yours. 🫶🏻💓💋</p>
+ <button class="primary" onclick="document.querySelector('#letter').scrollIntoView({behavior:'smooth'})">Open your surprise ✨</button>
+ <div><button class="soft" id="musicBtn" onclick="toggleMusic()">♫ Play sweet music</button></div>
+ <p style="font-size:.82rem;color:#ae7891">A special little world from Shashank</p>
+</div></header>
 <main class="wrap">
-<section id="letter">
- <div class="panel">
-  <h2>A letter for my princess 💌</h2>
-  <p class="sub">A few words from my heart, just for you.</p>
-  <div class="letter">Dear Tanvi,
+<section id="letter"><div class="panel">
+ <h2>A letter for my princess 💌</h2><p class="sub">A few words from my heart, just for you.</p>
+ <div class="letter">Dear Tanvi,
 
 Happy Princess Day, my dear love! 🫶🏻💓💋
 
@@ -75,66 +57,33 @@ May you always have reasons to smile, dreams to chase, and little moments that m
 This tiny website is made with lots of care, just to make you smile. Keep shining, my princess. ✨
 
 With lots of love,</div>
-  <div class="sign">— Shashank 💗</div>
- </div>
-</section>
-
+ <div class="sign">— Shashank 💗</div>
+</div></section>
 <section id="memories">
  <h2>Our little memory corner 📸</h2>
- <p class="sub">Add your favourite pictures here before sharing the website. Tap a frame to choose a photo from your phone.</p>
+ <p class="sub">A few favourite moments, saved here just for you. Every photo is part of our little story. 💗</p>
  <div class="gallery">
-  <div class="photo"><span class="placeholder">🌷</span><b>Memory one</b><label>Tap to add photo</label><input type="file" accept="image/*" onchange="loadPhoto(this)"></div>
-  <div class="photo"><span class="placeholder">💞</span><b>Memory two</b><label>Tap to add photo</label><input type="file" accept="image/*" onchange="loadPhoto(this)"></div>
-  <div class="photo"><span class="placeholder">🌸</span><b>Memory three</b><label>Tap to add photo</label><input type="file" accept="image/*" onchange="loadPhoto(this)"></div>
- </div>
- <p style="text-align:center;font: .8rem Arial,sans-serif;color:#a56a85;margin-top:14px">Note: Photos selected here are previewed in your browser only. To include them for Tanvi, add the image files to the website folder and update the gallery before publishing.</p>
-</section>
-
-<section>
- <div class="panel" style="text-align:center">
-  <h2>One last little surprise… 🎀</h2>
-  <p class="sub">There's one more message waiting for you. Tap below, princess.</p>
-  <button class="primary" onclick="reveal()">Reveal my surprise 💖</button>
-  <div class="final" id="final">
-   <div class="bigheart">💗</div>
-   <h2>Happy Princess, My Dear Love!</h2>
-   <p class="script">Tanvi, you make ordinary moments feel a little more magical.</p>
-   <p style="font-size:1.25rem">🫶🏻 💓 💋 👰🏻</p>
-   <p class="sign" style="text-align:center">Forever cheering for you,<br>Shashank</p>
-   <button class="soft" onclick="hearts(35)">Send you a sky full of hearts 💕</button>
-  </div>
+  <figure class="photo"><img src="memory-one.jpg" alt="Tanvi smiling in a blue outfit" loading="lazy"><figcaption>A sweet smile 🌷</figcaption></figure>
+  <figure class="photo"><img src="memory-two.jpg" alt="A special photo of Tanvi and Shashank together" loading="lazy"><figcaption>Our special moment 💞</figcaption></figure>
+  <figure class="photo"><img src="memory-three.jpg" alt="Tanvi in a beautiful traditional outfit" loading="lazy"><figcaption>My princess 🌸</figcaption></figure>
  </div>
 </section>
+<section><div class="panel" style="text-align:center">
+ <h2>One last little surprise… 🎀</h2><p class="sub">There's one more message waiting for you. Tap below, princess.</p>
+ <button class="primary" onclick="reveal()">Reveal my surprise 💖</button>
+ <div class="final" id="final"><div class="bigheart">💗</div><h2>Happy Princess, My Dear Love!</h2>
+  <p class="script">Tanvi, you make ordinary moments feel a little more magical.</p><p style="font-size:1.25rem">🫶🏻 💓 💋 👰🏻</p>
+  <p class="sign" style="text-align:center">With love,<br>Shashank</p><button class="soft" onclick="hearts(35)">Send you a sky full of hearts 💕</button>
+ </div>
+</div></section>
 </main>
 <footer>Made with love by Shashank · For Tanvi 👑</footer>
 <script>
-function loadPhoto(input){
- const file=input.files&&input.files[0]; if(!file)return;
- const reader=new FileReader();
- reader.onload=e=>{const box=input.parentElement;let img=box.querySelector('img');if(!img){img=document.createElement('img');box.appendChild(img)}img.src=e.target.result};
- reader.readAsDataURL(file);
-}
 function reveal(){document.getElementById('final').classList.add('show');hearts(24);document.getElementById('final').scrollIntoView({behavior:'smooth',block:'center'})}
 function hearts(n=12){for(let i=0;i<n;i++){const h=document.createElement('div');h.className='heart';h.textContent=['💗','💖','💕','✨','🌸'][Math.floor(Math.random()*5)];h.style.left=Math.random()*100+'vw';h.style.fontSize=(16+Math.random()*22)+'px';h.style.animationDuration=(4+Math.random()*4)+'s';document.body.appendChild(h);setTimeout(()=>h.remove(),8500)}}
 setInterval(()=>{if(Math.random()>.45)hearts(1)},1800);
-let audioCtx=null, musicTimer=null, noteIndex=0, playing=false;
-const notes=[523.25,659.25,783.99,659.25,587.33,698.46,880,698.46];
-function playNote(){
- if(!audioCtx||audioCtx.state!=='running')return;
- const osc=audioCtx.createOscillator(), gain=audioCtx.createGain();
- osc.type='sine';osc.frequency.value=notes[noteIndex++%notes.length];
- gain.gain.setValueAtTime(.0001,audioCtx.currentTime);
- gain.gain.exponentialRampToValueAtTime(.045,audioCtx.currentTime+.06);
- gain.gain.exponentialRampToValueAtTime(.0001,audioCtx.currentTime+.65);
- osc.connect(gain);gain.connect(audioCtx.destination);osc.start();osc.stop(audioCtx.currentTime+.7);
-}
-async function toggleMusic(){
- const btn=document.getElementById('musicBtn');
- if(!playing){
-  const AC=window.AudioContext||window.webkitAudioContext;if(!AC){btn.textContent='Music is not supported in this browser';return}
-  audioCtx=audioCtx||new AC();await audioCtx.resume();playing=true;playNote();musicTimer=setInterval(playNote,720);btn.textContent='♫ Pause sweet music';
- }else{playing=false;clearInterval(musicTimer);btn.textContent='♫ Play sweet music'}
-}
+let audioCtx=null,musicTimer=null,noteIndex=0,playing=false;const notes=[523.25,659.25,783.99,659.25,587.33,698.46,880,698.46];
+function playNote(){if(!audioCtx||audioCtx.state!=='running')return;const osc=audioCtx.createOscillator(),gain=audioCtx.createGain();osc.type='sine';osc.frequency.value=notes[noteIndex++%notes.length];gain.gain.setValueAtTime(.0001,audioCtx.currentTime);gain.gain.exponentialRampToValueAtTime(.045,audioCtx.currentTime+.06);gain.gain.exponentialRampToValueAtTime(.0001,audioCtx.currentTime+.65);osc.connect(gain);gain.connect(audioCtx.destination);osc.start();osc.stop(audioCtx.currentTime+.7)}
+async function toggleMusic(){const btn=document.getElementById('musicBtn');if(!playing){const AC=window.AudioContext||window.webkitAudioContext;if(!AC){btn.textContent='Music is not supported in this browser';return}audioCtx=audioCtx||new AC();await audioCtx.resume();playing=true;playNote();musicTimer=setInterval(playNote,720);btn.textContent='♫ Pause sweet music'}else{playing=false;clearInterval(musicTimer);btn.textContent='♫ Play sweet music'}}
 </script>
-</body>
-</html>
+</body></html>
